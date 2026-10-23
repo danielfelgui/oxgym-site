@@ -95,10 +95,11 @@ html{scroll-behavior:smooth}
 <header style="position: relative; z-index: 3">
 <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 84px">
 <a href="#topo" aria-label="OXGym Academia — início" style="display: flex; align-items: center"><img src="assets/logo-oxgym.png" alt="OXGym" style="height: 28px; width: auto; display: block"></a>
-<nav class="nav" style="display: flex; gap: 40px">
-<a href="#modalidades">Modalidades</a>
+<div style="display: flex; align-items: center; gap: 40px">
+<nav class="nav" style="display: flex; align-items: center; gap: 40px">
+<a href="#arena" aria-label="Arena" style="display: flex; align-items: center"><img src="assets/logo-arena.png" alt="Arena" style="height: 14px; width: auto; display: block"></a>
 <a href="#planos">Planos</a>
-<a href="#arena">Arena</a>
+<a href="#modalidades">Modalidades</a>
 <a href="#contato">Contato</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 12px">
@@ -109,10 +110,11 @@ html{scroll-behavior:smooth}
 </button>
 </div>
 </div>
+</div>
 <div id="menu-mobile" hidden style="position: absolute; top: 84px; left: 0; right: 0; background: #0B0B0B; border-top: 1px solid #222222; border-bottom: 1px solid #222222; padding: 8px 16px 24px; display: flex; flex-direction: column">
-<a href="#modalidades" data-close-menu style="padding: 16px 0; font-size: 16px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #1E1E1E">Modalidades</a>
+<a href="#arena" data-close-menu aria-label="Arena" style="display: flex; align-items: center; padding: 16px 0; border-bottom: 1px solid #1E1E1E"><img src="assets/logo-arena.png" alt="Arena" style="height: 17px; width: auto; display: block"></a>
 <a href="#planos" data-close-menu style="padding: 16px 0; font-size: 16px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #1E1E1E">Planos</a>
-<a href="#arena" data-close-menu style="padding: 16px 0; font-size: 16px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #1E1E1E">Arena</a>
+<a href="#modalidades" data-close-menu style="padding: 16px 0; font-size: 16px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #1E1E1E">Modalidades</a>
 <a href="#contato" data-close-menu style="padding: 16px 0; font-size: 16px; font-weight: 700; text-transform: uppercase">Contato</a>
 <a class="btn-primary" href="#contato" data-wa="matricula" target="_blank" rel="noopener" style="margin-top: 16px">Matricule-se <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
