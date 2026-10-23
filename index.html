@@ -538,22 +538,25 @@ var WHATSAPP = '5535998519084';
   // ----- Modalidades -----
   var CATS = [
     { label: 'LUTAS', items: [
-      { n: 'Muay-Thai' },
-      { n: 'Jiu-Jitsu', d: 'Respeito, disciplina, superação e união no maior tatame da região.' },
-      { n: 'Karatê' },
-      { n: 'Boxe' }
+      { n: 'Muay-Thai', img: 'muay-thai' },
+      { n: 'Jiu-Jitsu', img: 'jiu-jitsu', d: 'Respeito, disciplina, superação e união no maior tatame da região.' },
+      { n: 'Karatê', img: 'karate' },
+      { n: 'Boxe', img: 'boxe' }
     ] },
-    { label: 'AREIA', items: [{ n: 'Beach Tennis' }, { n: 'Futevôlei' }, { n: 'Day Use Arena' }] },
+    { label: 'AREIA', items: [
+      { n: 'Beach Tennis', img: 'beach-tennis' },
+      { n: 'Futevôlei', img: 'futevolei' },
+      { n: 'Vôlei', img: 'volei' }
+    ] },
     { label: 'COLETIVAS', items: [
-      { n: 'Funcional' },
-      { n: 'Crosstraining' },
-      { n: 'Pump Training', d: 'Intenso e com energia do começo ao fim. Trabalha o corpo todo e acelera o metabolismo.' },
-      { n: 'Core' },
-      { n: 'Dança' }
+      { n: 'Funcional', img: 'funcional' },
+      { n: 'Pump Training', img: 'pump-training', d: 'Intenso e com energia do começo ao fim. Trabalha o corpo todo e acelera o metabolismo.' },
+      { n: 'Core', img: 'core' },
+      { n: 'Dança', img: 'danca' }
     ] },
     { label: 'BEM-ESTAR', items: [
-      { n: 'Pilates', d: 'Um respiro no meio da correria da semana. Postura, equilíbrio e consciência corporal. Aulas todos os dias, de manhã, à tarde e à noite.' },
-      { n: 'Alongamento' }
+      { n: 'Pilates', img: 'pilates', d: 'Um respiro no meio da correria da semana. Postura, equilíbrio e consciência corporal. Aulas todos os dias, de manhã, à tarde e à noite.' },
+      { n: 'Alongamento', img: 'alongamento' }
     ] },
     { label: 'KIDS', items: [{ n: 'Kids', d: 'Aulas para crianças de 5 a 12 anos.' }] }
   ];
@@ -563,9 +566,10 @@ var WHATSAPP = '5535998519084';
     track.innerHTML = c.items.map(function (it, i) {
       var link = digits ? wa('Olá! Quero saber mais sobre as aulas de ' + it.n + ' na OXGym.') : '#contato';
       var ext = digits ? ' target="_blank" rel="noopener"' : '';
-      return '<article class="mcard ph" style="position: relative; height: 460px; border-radius: 10px; overflow: hidden">' +
+      var bg = it.img ? '; background: #151515 url(assets/modalidades/' + it.img + '.webp) center / cover no-repeat' : '';
+      return '<article class="mcard ph" style="position: relative; height: 460px; border-radius: 10px; overflow: hidden' + bg + '">' +
         '<div class="shade-card"></div>' +
-        '<div class="ph-label" style="top: 14px; bottom: auto">Foto: ' + esc(it.n) + '</div>' +
+        (it.img ? '' : '<div class="ph-label" style="top: 14px; bottom: auto">Foto: ' + esc(it.n) + '</div>') +
         '<div style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 28px; display: flex; flex-direction: column; gap: 10px">' +
         '<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #FCCC00">' + (i + 1 < 10 ? '0' : '') + (i + 1) + ' · ' + c.label + '</span>' +
         '<h3 style="margin: 0; font-size: 28px; font-weight: 800; line-height: 1; text-transform: uppercase; color: #FFFFFF">' + esc(it.n) + '</h3>' +
