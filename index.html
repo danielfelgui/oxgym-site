@@ -89,6 +89,7 @@ html{scroll-behavior:smooth}
 #oxsplash.oa-skip{animation:none;opacity:0;transition:opacity .3s cubic-bezier(.65,0,.35,1)}
 #oxsplash svg{display:block;width:min(88vw,720px);height:auto}
 #oxsplash svg *{transform-box:fill-box;transform-origin:center}
+#oxsplash:not(.oa-play),#oxsplash:not(.oa-play) *{animation-play-state:paused!important}
 #oxsplash .oa-pair{animation:oaPair var(--dur) forwards}
 #oxsplash .oa-x{animation:oaX var(--dur) forwards}
 #oxsplash .oa-g{animation:oaG var(--dur) forwards}
@@ -186,7 +187,21 @@ html{scroll-behavior:smooth}
     if (el.parentNode) el.parentNode.removeChild(el);
   }
   el.addEventListener('animationend', function (e) { if (e.target === el) close(); });
-  setTimeout(close, 4000);
+  // A animação fica parada no primeiro quadro até o site terminar de carregar,
+  // e começa um pouco depois, para o início não ser perdido.
+  var started = false;
+  function play() {
+    if (started) return;
+    started = true;
+    setTimeout(function () {
+      requestAnimationFrame(function () {
+        el.classList.add('oa-play');
+        setTimeout(close, 4000);
+      });
+    }, 400);
+  }
+  window.addEventListener('load', play);
+  setTimeout(play, 3000);
   el.addEventListener('pointerdown', function () {
     if (done) return;
     el.classList.add('oa-skip');
