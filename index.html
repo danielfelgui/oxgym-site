@@ -44,6 +44,7 @@ button{font-family:inherit;cursor:pointer}
 .vida{display:flex;align-items:center;gap:32px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.6fr;gap:32px}
 .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:72px;padding:20px 0;background:none;border:0;color:#FFFFFF;text-align:left;font-size:18px;font-weight:600}
+@media (min-width:961px){.shade-hero{background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.6) 28%,rgba(0,0,0,0) 46%)}}
 @media (max-width:960px){
 .nav,.head-cta{display:none !important}
 .burger{display:inline-flex}
@@ -215,7 +216,7 @@ html{scroll-behavior:smooth}
 <!-- HEADER + HERO -->
 <section style="position: relative; min-height: 780px; display: flex; flex-direction: column">
 <div class="ph" style="position: absolute; inset: 0; background: #151515 url(assets/hero.jpg) 65% center / cover no-repeat"></div>
-<div class="shade-left"></div>
+<div class="shade-left shade-hero"></div>
 <div class="shade-bottom"></div>
 
 <header style="position: relative; z-index: 3">
